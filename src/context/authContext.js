@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+  
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -25,6 +25,7 @@ export const AuthProvider = ({ children }) => {
     checkToken();
   }, []);
 
+  
   const login = async (jwtToken, userId) => {
     try {
       setIsLoggedIn(true);
