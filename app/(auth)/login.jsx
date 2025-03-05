@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, TextInput, Alert} from 'react-native';
+import { Text, View, TextInput, Alert, TouchableOpacity} from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../../src/context/authContext'; 
 import { loginUser } from '../../src/api/auth';
@@ -22,17 +22,19 @@ export default function Login() {
       Alert.alert('Erro', 'Preencha os campos corretamente.');
       return;
     }
-    setLoading(true);
-    try {
-      const { token, userId } = await loginUser(email, password);
-      login(token, userId);
-      Alert.alert('Sucesso', 'Login feito com sucesso!');
-    } catch (error) {
-      console.error('Erro ao fazer login:', error);
-      Alert.alert('Erro', 'Credenciais incorretas. Tente novamente.');
-    } finally {
-      setLoading(false);
-    }
+    // setLoading(true);
+    // try {
+    //   const { token, userId } = await loginUser(email, password);
+    //   login(token, userId);
+    //   Alert.alert('Sucesso', 'Login feito com sucesso!');
+    // } catch (error) {
+    //   console.error('Erro ao fazer login:', error);
+    //   Alert.alert('Erro', 'Credenciais incorretas. Tente novamente.');
+    // } finally {
+    //   setLoading(false);
+    // }
+
+    router.replace('/(main)/service-orders')
   };
 
   return (

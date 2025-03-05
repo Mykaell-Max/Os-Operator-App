@@ -8,20 +8,13 @@ export default function ServiceOrdersScreen() {
   return (
     <View style={styles.container}>
         <Text style={styles.screenTitle}>Service Orders</Text>
-        <Text>Tela index.jsx de service-orders (tela principal)</Text>
-        
-        <TouchableOpacity 
-            style={styles.button}
-            onPress={() => router.push('/(main)/service-orders/create')}
-        >
-            <Text style={styles.buttonText}>Go to Create OS</Text>
-        </TouchableOpacity>
+        <Text>Tela listOs, para listar as OS abertas de um usuario</Text>
 
         <TouchableOpacity 
             style={styles.button}
-            onPress={() => router.push('/(main)/service-orders/listOs')}
+            onPress={() => router.push('/(main)/service-orders/[id]-resubmit')}
         >
-            <Text style={styles.buttonText}>Go to list OS</Text>
+            <Text style={styles.buttonText}>Go to an OS</Text>
         </TouchableOpacity>
     </View>
   );

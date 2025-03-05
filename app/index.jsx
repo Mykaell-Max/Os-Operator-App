@@ -1,15 +1,14 @@
-import { View, Text } from 'react-native';
-import { useAuth } from '../src/context/authContext';
-import { useRouter } from 'expo-router';
 import { useEffect } from 'react';
+import { Redirect } from 'expo-router';
+import { useAuth } from '../src/context/authContext';
 
-export default function Index() {
+
+export default function InitialScreen() {
   const { isLoggedIn } = useAuth();
-  const router = useRouter();
 
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>T1</Text>
-    </View>
-  );
+  if (!isLoggedIn) {
+    return <Redirect href="/(auth)/login" />;
+  }
+
+  return <Redirect href="/(main)/service-orders" />;
 }
