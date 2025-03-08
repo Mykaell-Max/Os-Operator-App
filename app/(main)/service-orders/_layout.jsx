@@ -13,7 +13,7 @@ export default function TabsLayout() {
   return (
     <>
         <StatusBar barStyle="dark-content" />
-s
+
         <Tabs
             screenOptions={{
             tabBarActiveTintColor: colors.black,
@@ -70,8 +70,8 @@ s
             }}
             />      
 
-            <Tabs.Screen name="[id]" options={{ title: 'Login', href: null }} />
-            <Tabs.Screen name="[id]-resubmit" options={{ title: 'Login', href: null }} />
+            <Tabs.Screen name="[id]" options={{ title: 'OS', href: null }} />
+            <Tabs.Screen name="[id]-resubmit" options={{ title: 'Resubmit OS', href: null }} />
         </Tabs>
     </>
   );

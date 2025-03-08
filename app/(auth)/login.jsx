@@ -4,16 +4,19 @@ import { useRouter } from 'expo-router';
 import { useAuth } from '../../src/context/authContext'; 
 import { loginUser } from '../../src/api/auth';
 import { StyleSheet } from 'react-native';
+import AppButton from '../../src/components/common/AppButton';
+
 
 export default function Login() {
   const { login, isLoggedIn } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   
   useEffect(() => {
     if (isLoggedIn) {
-        router.replace('/(main)/');
+        router.replace('/(main)/service-orders');
     }
   }, [isLoggedIn]);
   
@@ -33,13 +36,14 @@ export default function Login() {
     // } finally {
     //   setLoading(false);
     // }
-
     router.replace('/(main)/service-orders')
   };
 
   return (
     <View style={styles.container}>
+
       <Text style={styles.title}>Service Order App</Text>
+      
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -56,9 +60,13 @@ export default function Login() {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
-        <Text style={styles.loginButtonText}>Login</Text>
-      </TouchableOpacity>
+
+      <AppButton
+        text={loading ? 'Carregando...' : 'Login'}
+        onPress={handleLogin}
+        disabled={loading}
+      />  
+      
     </View>
   );
 };
