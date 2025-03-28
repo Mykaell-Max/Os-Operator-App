@@ -12,7 +12,7 @@ export default function ServiceOrdersScreen() {
 
         <TouchableOpacity 
             style={styles.button}
-            onPress={() => router.push('/(main)/service-orders/[id]-resubmit')}
+            onPress={() => router.push('/(main)/service-orders/[id]')}
         >
             <Text style={styles.buttonText}>Go to an OS</Text>
         </TouchableOpacity>

@@ -11,17 +11,17 @@ export default function ServiceOrdersScreen() {
         <Text>Tela index.jsx de service-orders (tela principal)</Text>
         
         <TouchableOpacity 
-            style={styles.button}
-            onPress={() => router.push('/(main)/service-orders/create')}
+          style={styles.button}
+          onPress={() => router.push('/(main)/service-orders/create')}
         >
-            <Text style={styles.buttonText}>Go to Create OS</Text>
+          <Text style={styles.buttonText}>Go to Create OS</Text>
         </TouchableOpacity>
 
         <TouchableOpacity 
-            style={styles.button}
-            onPress={() => router.push('/(main)/service-orders/listOs')}
+          style={styles.button}
+          onPress={() => router.push('/(main)/service-orders/listOs')}
         >
-            <Text style={styles.buttonText}>Go to list OS</Text>
+          <Text style={styles.buttonText}>Go to list OS</Text>
         </TouchableOpacity>
     </View>
   );
